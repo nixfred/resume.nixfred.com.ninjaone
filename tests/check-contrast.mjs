@@ -40,19 +40,19 @@ const PAIRS = [
   ['--bone-dim', '--ink', 'normal'],
   ['--bone-dim', '--ink-2', 'normal'],
   ['--bone-faint', '--ink', 'normal'],
-  ['--vermillion-text', '--ink', 'normal'],
-  ['--vermillion-text', '--ink-2', 'normal'],
-  ['--gold', '--ink', 'normal'],
-  ['--gold', '--ink-2', 'normal'],
-  ['--ink', '--gold', 'normal'],
+  ['--brand-text', '--ink', 'normal'],
+  ['--brand-text', '--ink-2', 'normal'],
+  ['--sky', '--ink', 'normal'],
+  ['--sky', '--ink-2', 'normal'],
+  ['--ink', '--sky', 'normal'],
   ['--kanji-mark', '--ink', 'large'],
-  ['--vermillion', '--ink', 'ui'],
+  ['--brand', '--ink', 'ui'],
 ];
 
 /* decorative hairlines: reported, never asserted (WCAG 1.4.11 exemption) */
 const ADVISORY = [
-  ['--vermillion-border', '--ink-2'],
-  ['--gold-border', '--ink-2'],
+  ['--brand-border', '--ink-2'],
+  ['--sky-border', '--ink-2'],
   ['--bone-border', '--ink-2'],
 ];
 

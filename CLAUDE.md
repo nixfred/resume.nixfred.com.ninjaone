@@ -33,7 +33,7 @@
 ## Design law (settled, never re-interview)
 
 - Theme: Japanese ninja (Fred ruling 2026-08-02). NinjaOne culture is very ninja; the site wears it.
-- Palette: sumi ink background #0a0a0f, bone text #e6e1d5, vermillion accent #d43d2a, gold accent #d4b55a. All color from tokens.css, no raw hex downstream.
+- Palette: NinjaOne brand colors pulled from the live ninjaone.com CSS custom properties (Fred ruling 2026-08-02). Dark navy ink #0d2d44, card #09344f, bone text #f4f8f8, vivid green brand #04ff88, green text #48e275, sky cyan accent #55ebff. All color from tokens.css, no raw hex downstream.
 - Typeface trio: Orbitron (Latin display), Inter (body), JetBrains Mono (labels, numbers, badges). Shippori Mincho B1 subset for kanji marks. All self-hosted woff2, OFL licensed, no CDN.
 - Kanji section marks with romaji captions: 忍 nin hero, 志 kokorozashi resolve, 修行 shugyō training (proof of work), 術 jutsu technique (SE craft), 道 michi the way (career), 印 shirushi mark (recognition), 学 gaku learning, 影 kage shadow (Larry), 縁 enishi connection (contact). Kanji never carries information alone.
 - Motifs: inline SVG shuriken markers, enso ring, thin vermillion rules. Every visual role="img" with aria-label, viewBox based, token colors.

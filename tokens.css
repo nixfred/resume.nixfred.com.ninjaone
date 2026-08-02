@@ -1,25 +1,27 @@
-/* tokens.css: the only home for color values on n1.nixfred.com (factory: tokens are law) */
+/* tokens.css: the only home for color values on n1.nixfred.com (factory: tokens are law).
+   Palette: NinjaOne brand colors, pulled from the live ninjaone.com CSS custom
+   properties 2026-08-02 (Fred ruling: use their colors). */
 :root {
-  /* palette */
-  --ink: #0a0a0f;
-  --ink-2: #12121c;
-  --ink-3: #1a1a28;
-  --bone: #e6e1d5;
-  --bone-dim: #a8a294;
-  --bone-faint: #96917f;
-  --vermillion: #d43d2a;
-  --vermillion-text: #ef6a52;
-  --gold: #d4b55a;
-  --gold-dim: #9d8a4e;
+  /* palette (NinjaOne: vivid green, sky cyan, dark navy blues) */
+  --ink: #0d2d44;
+  --ink-2: #09344f;
+  --ink-3: #053856;
+  --bone: #f4f8f8;
+  --bone-dim: #bccad4;
+  --bone-faint: #89a3b3;
+  --brand: #04ff88;
+  --brand-text: #48e275;
+  --sky: #55ebff;
+  --sky-dim: #007da5;
 
   /* derived shades */
-  --vermillion-border: rgba(212, 61, 42, 0.28);
-  --vermillion-glow: rgba(212, 61, 42, 0.14);
-  --gold-border: rgba(212, 181, 90, 0.25);
-  --bone-border: rgba(230, 225, 213, 0.10);
-  --ink-overlay: rgba(10, 10, 15, 0.82);
-  --kanji-watermark: rgba(212, 61, 42, 0.07);
-  --kanji-mark: rgba(212, 61, 42, 0.9);
+  --brand-border: rgba(4, 255, 139, 0.30);
+  --brand-glow: rgba(4, 255, 139, 0.13);
+  --sky-border: rgba(85, 235, 255, 0.25);
+  --bone-border: rgba(244, 248, 248, 0.10);
+  --ink-overlay: rgba(13, 45, 68, 0.85);
+  --kanji-watermark: rgba(4, 255, 139, 0.07);
+  --kanji-mark: rgba(4, 255, 139, 0.9);
 
   /* type */
   --font-display: 'Orbitron', sans-serif;
@@ -45,13 +47,13 @@
     --bone: #1a1a1a;
     --bone-dim: #333333;
     --bone-faint: #555555;
-    --vermillion: #1a1a1a;
-    --vermillion-text: #1a1a1a;
-    --gold: #1a1a1a;
-    --gold-dim: #1a1a1a;
-    --vermillion-border: #cccccc;
-    --vermillion-glow: #ffffff;
-    --gold-border: #cccccc;
+    --brand: #1a1a1a;
+    --brand-text: #1a1a1a;
+    --sky: #1a1a1a;
+    --sky-dim: #1a1a1a;
+    --brand-border: #cccccc;
+    --brand-glow: #ffffff;
+    --sky-border: #cccccc;
     --bone-border: #dddddd;
     --ink-overlay: #ffffff;
     --kanji-watermark: rgba(0, 0, 0, 0);
