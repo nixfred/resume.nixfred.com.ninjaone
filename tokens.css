@@ -1,0 +1,61 @@
+/* tokens.css: the only home for color values on n1.nixfred.com (factory: tokens are law) */
+:root {
+  /* palette */
+  --ink: #0a0a0f;
+  --ink-2: #12121c;
+  --ink-3: #1a1a28;
+  --bone: #e6e1d5;
+  --bone-dim: #a8a294;
+  --bone-faint: #96917f;
+  --vermillion: #d43d2a;
+  --vermillion-text: #ef6a52;
+  --gold: #d4b55a;
+  --gold-dim: #9d8a4e;
+
+  /* derived shades */
+  --vermillion-border: rgba(212, 61, 42, 0.28);
+  --vermillion-glow: rgba(212, 61, 42, 0.14);
+  --gold-border: rgba(212, 181, 90, 0.25);
+  --bone-border: rgba(230, 225, 213, 0.10);
+  --ink-overlay: rgba(10, 10, 15, 0.82);
+  --kanji-watermark: rgba(212, 61, 42, 0.07);
+  --kanji-mark: rgba(212, 61, 42, 0.9);
+
+  /* type */
+  --font-display: 'Orbitron', sans-serif;
+  --font-body: 'Inter', sans-serif;
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-kanji: 'Shippori Mincho B1', serif;
+
+  /* rhythm */
+  --maxw: 1100px;
+  --gutter: clamp(20px, 4vw, 48px);
+  --section-gap: clamp(72px, 10vw, 128px);
+
+  color-scheme: dark;
+}
+
+/* print palette: clean single-color paper resume. Colors live here so
+   print.css stays layout-only and the tokens gate holds on paper too. */
+@media print {
+  :root {
+    --ink: #ffffff;
+    --ink-2: #ffffff;
+    --ink-3: #ffffff;
+    --bone: #1a1a1a;
+    --bone-dim: #333333;
+    --bone-faint: #555555;
+    --vermillion: #1a1a1a;
+    --vermillion-text: #1a1a1a;
+    --gold: #1a1a1a;
+    --gold-dim: #1a1a1a;
+    --vermillion-border: #cccccc;
+    --vermillion-glow: #ffffff;
+    --gold-border: #cccccc;
+    --bone-border: #dddddd;
+    --ink-overlay: #ffffff;
+    --kanji-watermark: rgba(0, 0, 0, 0);
+    --kanji-mark: #1a1a1a;
+    color-scheme: light;
+  }
+}

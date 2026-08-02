@@ -1,0 +1,43 @@
+name: deploy
+
+on:
+  push:
+    branches: [main]
+
+permissions:
+  contents: read
+
+jobs:
+  gates-and-deploy:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: oven-sh/setup-bun@v2
+
+      - name: Install image tools
+        run: sudo apt-get update && sudo apt-get install -y librsvg2-bin
+
+      - name: Build dist (version stamped from commit)
+        run: scripts/build.sh auto
+
+      - name: Link gate
+        run: tests/check-links.sh
+
+      - name: Copy gate
+        run: tests/check-copy.sh
+
+      - name: Canonical gate
+        run: tests/check-canonical.sh
+
+      - name: Safety gate
+        run: tests/check-safety.sh
+
+      - name: Contrast gate
+        run: bun tests/check-contrast.mjs
+
+      - name: Deploy to Cloudflare Pages
+        run: npx wrangler@latest pages deploy dist --project-name n1-nixfred-com --branch main
+        env:
+          CLOUDFLARE_API_TOKEN: ${{ secrets.CLOUDFLARE_API_TOKEN }}
+          CLOUDFLARE_ACCOUNT_ID: ${{ secrets.CLOUDFLARE_ACCOUNT_ID }}

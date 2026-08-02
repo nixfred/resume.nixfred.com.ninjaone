@@ -1,0 +1,28 @@
+/* print.css: clean single-color paper resume. Layout only; every color
+   comes from the @media print token block in tokens.css. */
+
+@media print {
+  body { font-size: 11.5pt; line-height: 1.5; background: var(--ink); }
+
+  .site-nav, .cta-row, .print-hint, .hero-enso, .hero-watermark,
+  .proof-kanji, .skip-link, .shuriken { display: none !important; }
+
+  .hero { padding: 0 0 18pt; }
+  section { padding-top: 22pt; }
+  .wrap { padding: 0; max-width: none; }
+
+  .why-points, .craft-grid, .skills-grid, .marks-grid, .contact-links {
+    grid-template-columns: 1fr 1fr;
+    gap: 10pt;
+  }
+  .why-point, .craft-card, .mark-card, .proof, .shadow-box,
+  .contact-links a { break-inside: avoid; }
+  .proof-grid { grid-template-columns: 1fr 1fr; }
+  .timeline li { grid-template-columns: 90pt 1fr; padding: 8pt 0; }
+
+  a { text-decoration: none; }
+  .site-footer { margin-top: 24pt; }
+  html.js .reveal { opacity: 1; transform: none; }
+
+  @page { margin: 14mm; }
+}

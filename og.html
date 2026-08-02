@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<!-- OG card source. Rendered to assets/og.png (1200x630) by scripts/build.sh.
+     Colors come from tokens.css so the tokens gate holds here too. -->
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="tokens.css">
+<style>
+  @font-face {
+    font-family: 'Orbitron';
+    src: url('assets/fonts/orbitron-900.woff2') format('woff2');
+    font-weight: 900;
+  }
+  @font-face {
+    font-family: 'Orbitron';
+    src: url('assets/fonts/orbitron-700.woff2') format('woff2');
+    font-weight: 700;
+  }
+  @font-face {
+    font-family: 'JetBrains Mono';
+    src: url('assets/fonts/jetbrains-mono-400.woff2') format('woff2');
+    font-weight: 400;
+  }
+  @font-face {
+    font-family: 'Shippori Mincho B1';
+    src: url('assets/fonts/shippori-kanji.woff2') format('woff2');
+    font-weight: 700;
+  }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+  body {
+    width: 1200px; height: 630px;
+    background: var(--ink);
+    color: var(--bone);
+    font-family: 'Orbitron', sans-serif;
+    position: relative;
+    overflow: hidden;
+  }
+  .kanji {
+    position: absolute; right: 30px; top: 50%;
+    transform: translateY(-50%);
+    font-family: 'Shippori Mincho B1', serif;
+    font-size: 330px; line-height: 1;
+    color: var(--kanji-watermark);
+  }
+  .ring {
+    position: absolute; right: 90px; top: 115px;
+    width: 400px; height: 400px; border-radius: 50%;
+    border: 3px solid var(--gold);
+    opacity: 0.35;
+  }
+  .inner { position: absolute; left: 80px; top: 120px; width: 720px; }
+  .kicker {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 21px; letter-spacing: 0.24em;
+    color: var(--vermillion-text);
+    text-transform: uppercase;
+    margin-bottom: 28px;
+  }
+  h1 { font-size: 74px; font-weight: 900; letter-spacing: 0.04em; line-height: 1.05; }
+  .role {
+    font-size: 26px; font-weight: 700; letter-spacing: 0.12em;
+    color: var(--gold); margin-top: 22px;
+  }
+  .rule { width: 90px; height: 4px; background: var(--vermillion); margin-top: 44px; }
+  .url {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 22px; color: var(--bone-dim); margin-top: 26px;
+  }
+</style>
+</head>
+<body>
+  <div class="ring"></div>
+  <div class="kanji" lang="ja">忍者</div>
+  <div class="inner">
+    <div class="kicker">Enterprise SE · NinjaOne · Southeast</div>
+    <h1>FRED W. NIX JR.</h1>
+    <div class="role">ENTERPRISE SOLUTIONS ENGINEER</div>
+    <div class="rule"></div>
+    <div class="url">n1.nixfred.com</div>
+  </div>
+</body>
+</html>
