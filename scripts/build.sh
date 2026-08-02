@@ -22,7 +22,12 @@ cp index.html tokens.css styles.css print.css favicon.svg robots.txt sitemap.xml
 cp assets/fonts/*.woff2 dist/assets/
 
 # version stamp (footer span carries the only copy of the string)
-sed -i '' "s|<span class=\"version\">dev-local</span>|<span class=\"version\">${VERSION}</span>|" dist/index.html
+# portable in-place sed: GNU takes -i alone, BSD takes -i ''
+if sed --version >/dev/null 2>&1; then
+  sed -i "s|<span class=\"version\">dev-local</span>|<span class=\"version\">${VERSION}</span>|" dist/index.html
+else
+  sed -i '' "s|<span class=\"version\">dev-local</span>|<span class=\"version\">${VERSION}</span>|" dist/index.html
+fi
 
 # favicon rasters from the same SVG (factory metadata contract)
 rsvg-convert -w 32 -h 32 favicon.svg -o dist/assets/favicon-32.png
