@@ -23,11 +23,15 @@ cp assets/fonts/*.woff2 dist/assets/
 
 # version stamp (footer span carries the only copy of the string)
 # portable in-place sed: GNU takes -i alone, BSD takes -i ''
-if sed --version >/dev/null 2>&1; then
-  sed -i "s|<span class=\"version\">dev-local</span>|<span class=\"version\">${VERSION}</span>|" dist/index.html
-else
-  sed -i '' "s|<span class=\"version\">dev-local</span>|<span class=\"version\">${VERSION}</span>|" dist/index.html
-fi
+SED_I=(-i)
+sed --version >/dev/null 2>&1 || SED_I=(-i '')
+sed "${SED_I[@]}" "s|<span class=\"version\">dev-local</span>|<span class=\"version\">${VERSION}</span>|" dist/index.html
+
+# stamp asset URLs with the version so a stale browser or edge cache can
+# never pair new HTML with old CSS (the giant-ninja print bug, 2026-08-02)
+for css in tokens.css styles.css print.css; do
+  sed "${SED_I[@]}" "s|href=\"${css}\"|href=\"${css}?v=${VERSION}\"|" dist/index.html
+done
 
 # favicon rasters from the same SVG (factory metadata contract)
 rsvg-convert -w 32 -h 32 favicon.svg -o dist/assets/favicon-32.png
