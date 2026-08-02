@@ -2,27 +2,52 @@
    comes from the @media print token block in tokens.css. */
 
 @media print {
-  body { font-size: 11.5pt; line-height: 1.5; background: var(--ink); }
+  body { font-size: 11pt; line-height: 1.45; background: var(--ink); }
 
-  .site-nav, .cta-row, .print-hint, .hero-ninja, .hero-watermark,
-  .proof-kanji, .skip-link, .shuriken, .print-modal, .nav-print { display: none !important; }
+  .site-nav, .cta-row, .print-hint, .hero-watermark,
+  .proof-kanji, .skip-link, .shuriken, .print-modal, .nav-print,
+  .kanji-badge { display: none !important; }
 
-  .hero { padding: 0 0 18pt; }
-  section { padding-top: 22pt; }
+  /* the little ninja stays: small line-art figure at the top right of the header */
+  .hero { padding: 0 88pt 14pt 0; }
+  .hero-ninja {
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 64pt;
+    filter: none;
+  }
+
+  section { padding-top: 16pt; }
   .wrap { padding: 0; max-width: none; }
+  .section-head { margin-bottom: 10pt; break-after: avoid; }
+  .section-rule { margin-top: 8pt; }
+  .lede { margin-bottom: 4pt; }
 
   .why-points, .craft-grid, .skills-grid, .marks-grid, .contact-links {
     grid-template-columns: 1fr 1fr;
-    gap: 10pt;
+    gap: 8pt;
+    margin-top: 12pt;
   }
   .why-point, .craft-card, .mark-card, .proof, .shadow-box,
-  .contact-links a { break-inside: avoid; }
-  .proof-grid { grid-template-columns: 1fr 1fr; }
-  .timeline li { grid-template-columns: 90pt 1fr; padding: 8pt 0; }
+  .contact-links a, .timeline li, .skill-col { break-inside: avoid; }
+  .why-point, .craft-card, .mark-card { padding: 12pt 12pt; }
+  .proof { padding: 14pt 16pt; margin-top: 12pt !important; }
+  .proof-grid { grid-template-columns: 1fr 1fr; gap: 6pt 14pt; margin-bottom: 12pt; }
+  .proof .btn { display: none; }
+  .shadow-box { padding: 12pt 16pt; }
+  .timeline { margin-top: 12pt; }
+  .timeline li { grid-template-columns: 90pt 1fr; padding: 6pt 0; }
+  .t-when { font-size: 9.5pt; }
+  .skill-col h3 { margin-bottom: 8pt; padding-bottom: 6pt; }
+  .contact-links { margin-top: 12pt; }
+  .contact-links a { padding: 10pt 12pt; }
+
+  h1, h2, h3 { break-after: avoid; }
 
   a { text-decoration: none; }
-  .site-footer { margin-top: 24pt; }
+  .site-footer { margin-top: 16pt; padding: 12pt 0 0; }
   html.js .reveal { opacity: 1; transform: none; }
 
-  @page { margin: 14mm; }
+  @page { margin: 12mm; }
 }

@@ -30,6 +30,10 @@ Career facts mirror nixfred/resume v9.0 exactly. BlueAlly and Pure Storage appea
 
 Orbitron, Inter, JetBrains Mono (fontsource woff2, latin), Shippori Mincho B1 subsetted to the kanji used plus macron vowels. No runtime CDN font dependencies (STANDARDS.md section 5).
 
+## 2026-08-02 Fred review round 3: print keeps the ninja, breaks and spacing tuned
+
+Fred: keep the little ninja in the PDF, page breaks must look good, and printed pages waste no vertical space. Print stylesheet now keeps the hero ninja as a small line-art figure at the header's top right (screen filters removed), adds break-inside avoid to every card, timeline row, skill column, and the proof box, break-after avoid on section heads and headings, and tightens print rhythm (12mm pages, 16pt section gaps, smaller card padding). In-card kanji badges hidden on paper as redundant decoration. Verified against a real generated PDF, five Letter pages, no split cards and no stranded headings.
+
 ## 2026-08-02 Fred review round 2: NinjaOne brand colors
 
 Fred: go to ninjaone.com and use their colors. Palette extracted from the live site's CSS custom properties with a real browser (ninjaone.com blocks non-browser GETs): vivid green #04ff88, hover green #48e275, sky cyan #55ebff, dark navy steps #0d2d44 / #09344f / #053856, blue-gray #bccad4. Tokens renamed vermillion to brand and gold to sky across tokens.css, styles.css, index.html, og.html, and the contrast gate. Sumi ink and vermillion retired. Japanese ninja structure (kanji marks, shuriken, hood figure) stays; only the colors changed. bone-faint derived at #89a3b3 to hold AA on navy (4.45 fail caught by the contrast gate).
