@@ -57,6 +57,7 @@
       <li><a href="#shadow">Shadow</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
+    <button class="nav-print" type="button" data-open-print>PRINT</button>
   </div>
 </nav>
 
@@ -64,9 +65,14 @@
 
 <header class="hero" id="top">
   <div class="hero-watermark" lang="ja" aria-hidden="true">忍者</div>
-  <svg class="hero-enso" viewBox="0 0 200 200" role="img" aria-label="Enso brush circle">
-    <circle cx="100" cy="100" r="86" fill="none" stroke="var(--gold)" stroke-width="2.5"
-            stroke-linecap="round" stroke-dasharray="465 75" transform="rotate(-108 100 100)" opacity="0.55"/>
+  <svg class="hero-ninja" viewBox="0 0 200 200" role="img" aria-label="Ninja in a hood, watching">
+    <path d="M100 16 C58 16 33 51 33 92 C33 123 50 151 79 163 C89 167 111 167 121 163 C150 151 167 123 167 92 C167 51 142 16 100 16 Z"
+          fill="var(--ink-3)" stroke="var(--vermillion)" stroke-width="2.5" opacity="0.9"/>
+    <path d="M50 82 C69 71 131 71 150 82 C150 108 132 124 100 124 C68 124 50 108 50 82 Z" fill="var(--ink)"/>
+    <path d="M64 92 Q84 83 97 90 Q84 98 64 92 Z" fill="var(--gold)"/>
+    <path d="M136 92 Q116 83 103 90 Q116 98 136 92 Z" fill="var(--gold)"/>
+    <path d="M158 56 Q186 48 197 28 Q190 56 164 66 Z" fill="var(--vermillion)"/>
+    <path d="M162 70 Q189 68 199 52 Q190 78 164 79 Z" fill="var(--vermillion)"/>
   </svg>
   <div class="wrap">
     <p class="kicker">A resume built for one company: NinjaOne</p>
@@ -76,7 +82,7 @@
       This is not my general resume. It is the version built for one seat:
       <strong>Enterprise SE at NinjaOne</strong>, Southeast. Twenty five years of
       presales, a career of quota attainment, and a field guide to your platform
-      that I wrote before my first interview.
+      that I built to learn it.
     </p>
     <ul class="chip-row">
       <li class="chip accent">Atlanta, GA</li>
@@ -86,9 +92,9 @@
       <li class="chip">AI Fluent Builder</li>
     </ul>
     <div class="cta-row">
-      <a class="btn" href="#training">The proof of work</a>
+      <a class="btn" href="#training">The field guide</a>
       <a class="btn ghost" href="https://ninjaone.nixfred.com/">ninjaone.nixfred.com</a>
-      <button class="btn ghost" type="button" onclick="window.print()">Print this resume</button>
+      <button class="btn ghost" type="button" data-open-print>Print this resume</button>
     </div>
   </div>
 </header>
@@ -145,19 +151,20 @@
         <span class="mark-kanji" lang="ja">修行</span>
         <span class="mark-romaji">shugyō · training</span>
       </div>
-      <h2 id="training-h">Proof of work, not claims</h2>
+      <h2 id="training-h">How I learn your platform</h2>
       <div class="section-rule"></div>
     </div>
     <p class="lede reveal">
-      Most candidates walk in and say: tell me about the product.
-      <strong>I built the field guide instead.</strong> Before any interview,
-      I studied the platform the way I study every platform I intend to represent,
-      and I published the result.
+      Building is how I learn. When a platform matters to me, I write its field
+      guide: study the official documentation, verify every claim against the
+      source, and publish the result so anyone on the team can use it.
+      <strong>NinjaOne is the platform I want to represent, so the guide I built
+      is yours.</strong>
     </p>
     <div class="proof reveal" style="margin-top:40px">
       <div class="proof-kanji" lang="ja" aria-hidden="true">修行</div>
       <h3><a href="https://ninjaone.nixfred.com/">ninjaone.nixfred.com</a></h3>
-      <p class="proof-sub">A complete SE field guide to the NinjaOne platform, written before day one</p>
+      <p class="proof-sub">A field guide to the NinjaOne platform, built to learn it, published for your team</p>
       <ul class="proof-grid">
         <li><span class="n">10</span><span><strong>module curriculum</strong>, platform foundations through POC discipline</span></li>
         <li><span class="n">12</span><span><strong>move whiteboard talk track</strong>: blank wall to the full platform story, marker handed to the Customer at the end</span></li>
@@ -428,7 +435,7 @@
         <a href="https://ninjaone.nixfred.com/">
           <span class="lbl">Field guide</span>
           <span class="val">ninjaone.nixfred.com</span>
-          <span class="sub">The proof of work on this page.</span>
+          <span class="sub">The field guide behind this page.</span>
         </a>
       </li>
       <li class="reveal">
@@ -452,6 +459,21 @@
 
 </main>
 
+<div class="print-modal" id="printModal" role="dialog" aria-modal="true" aria-labelledby="printTitle" hidden>
+  <div class="print-backdrop" data-close-print></div>
+  <div class="print-card">
+    <svg class="print-shuriken" role="img" aria-label="Shuriken mark"><use href="#shuriken"/></svg>
+    <h2 id="printTitle">Take it on paper</h2>
+    <p>This page lays itself out as a clean, single-color resume: decorations
+    and buttons step aside, the record stays. One file, made to be printed.</p>
+    <div class="print-actions">
+      <button class="btn" type="button" id="doPrint">Print the resume</button>
+      <button class="btn ghost" type="button" data-close-print>Not now</button>
+    </div>
+    <p class="print-note">Cmd / Ctrl + P works too.</p>
+  </div>
+</div>
+
 <footer class="site-footer">
   <div class="wrap">
     <span>Built by Fred Nix · <a href="https://nixfred.com/">nixfred.com</a></span>
@@ -474,6 +496,36 @@
     });
   }, { threshold: 0.08 });
   document.querySelectorAll('.reveal').forEach(el => revealObserver.observe(el));
+
+  // Print modal: glowing window, ESC and backdrop close, focus returned.
+  const modal = document.getElementById('printModal');
+  let lastTrigger = null;
+
+  function openPrint(trigger) {
+    lastTrigger = trigger;
+    modal.hidden = false;
+    document.body.style.overflow = 'hidden';
+    document.getElementById('doPrint').focus();
+  }
+  function closePrint() {
+    modal.hidden = true;
+    document.body.style.overflow = '';
+    if (lastTrigger) lastTrigger.focus();
+  }
+
+  document.querySelectorAll('[data-open-print]').forEach(btn => {
+    btn.addEventListener('click', () => openPrint(btn));
+  });
+  modal.querySelectorAll('[data-close-print]').forEach(el => {
+    el.addEventListener('click', closePrint);
+  });
+  document.getElementById('doPrint').addEventListener('click', () => {
+    closePrint();
+    window.print();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && !modal.hidden) closePrint();
+  });
 </script>
 
 </body>

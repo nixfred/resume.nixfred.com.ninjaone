@@ -4,8 +4,8 @@
 @media print {
   body { font-size: 11.5pt; line-height: 1.5; background: var(--ink); }
 
-  .site-nav, .cta-row, .print-hint, .hero-enso, .hero-watermark,
-  .proof-kanji, .skip-link, .shuriken { display: none !important; }
+  .site-nav, .cta-row, .print-hint, .hero-ninja, .hero-watermark,
+  .proof-kanji, .skip-link, .shuriken, .print-modal, .nav-print { display: none !important; }
 
   .hero { padding: 0 0 18pt; }
   section { padding-top: 22pt; }

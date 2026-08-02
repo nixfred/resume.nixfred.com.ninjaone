@@ -29,3 +29,7 @@ Career facts mirror nixfred/resume v9.0 exactly. BlueAlly and Pure Storage appea
 ## 2026-08-02 Fonts: self-hosted OFL only
 
 Orbitron, Inter, JetBrains Mono (fontsource woff2, latin), Shippori Mincho B1 subsetted to the kanji used plus macron vowels. No runtime CDN font dependencies (STANDARDS.md section 5).
+
+## 2026-08-02 Fred review round 1: tone, ninja figure, print modal, 2x2 contact
+
+Fred reviewed the live site and ordered: (1) training section retitled "How I learn your platform", dropping the "proof of work, not claims" framing; the message is that building a field guide is how he learns and the guide now belongs to the team, not a challenge to other candidates. (2) The hero enso ring read as a broken circle; replaced with an original ninja head SVG in the NinjaOne spirit (hood, gold eyes, vermillion bandana tails), not a copy of the trademarked logo. (3) Contact cards locked to a 2x2 grid on desktop, single column under 640px. (4) PRINT control in the nav and hero opens a glowing modal (vermillion glow, backdrop blur, ESC and backdrop close, focus returned) that calls window.print(). Print and mobile behavior re-verified after the round.
