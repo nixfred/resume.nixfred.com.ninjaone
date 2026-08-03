@@ -331,6 +331,26 @@ section { padding: var(--section-gap) 0 0; }
 }
 .why-point p { font-size: 14.5px; color: var(--bone-dim); }
 
+.signal-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 22px;
+  padding: 0;
+  list-style: none;
+}
+.signal-row a {
+  display: inline-block;
+  font-family: var(--font-mono);
+  font-size: 12.5px;
+  letter-spacing: 0.05em;
+  color: var(--brand-text);
+  border: 1px solid var(--brand-border);
+  border-radius: 999px;
+  padding: 8px 16px;
+}
+.signal-row a:hover { border-color: var(--brand-text); background: var(--brand-glow); text-decoration: none; }
+
 /* ---------- proof of work ---------- */
 .proof {
   border: 1px solid var(--brand-border);

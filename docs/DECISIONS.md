@@ -30,6 +30,10 @@ Career facts mirror nixfred/resume v9.0 exactly. BlueAlly and Pure Storage appea
 
 Orbitron, Inter, JetBrains Mono (fontsource woff2, latin), Shippori Mincho B1 subsetted to the kanji used plus macron vowels. No runtime CDN font dependencies (STANDARDS.md section 5).
 
+## 2026-08-02 Momentum signals strip from OSINT (verified, sourced)
+
+From the NinjaOne OSINT prep file, only verified, publicly sourceable momentum facts were added to Why NinjaOne as a linked signal strip: Gartner Magic Quadrant Leader 2026, $12.3B valuation (June 2026), $500M+ ARR and profitability, Gartner Peer Insights Customers' Choice 4.7/5, ServiceNow integration. Each links its source at point of claim (Law 9). Deliberately excluded: all people intel (private individuals, Law 7), employer-signal and compensation data, negotiation prep, and anything tagged LIKELY or UNCONFIRMED.
+
 ## 2026-08-02 Fred review round 4: Larry section removed
 
 Fred: remove the part about Larry, the entire section. The 影 shadow section (The shadow that works beside me) is out, along with its nav entry and the shadow-box styles in styles.css and print.css. The general resume keeps its Larry content; this site does not mention the system. Section kanji sequence now 志 修行 術 道 印 縁.

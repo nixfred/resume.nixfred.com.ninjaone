@@ -31,6 +31,7 @@
   }
   .why-point, .craft-card, .mark-card, .proof,
   .contact-links a, .timeline li, .skill-col { break-inside: avoid; }
+  .signal-row { margin-top: 10pt; }
   .why-point, .craft-card, .mark-card { padding: 12pt 12pt; }
   .proof { padding: 14pt 16pt; margin-top: 12pt !important; }
   .proof-grid { grid-template-columns: 1fr 1fr; gap: 6pt 14pt; margin-bottom: 12pt; }
