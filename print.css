@@ -29,13 +29,12 @@
     gap: 8pt;
     margin-top: 12pt;
   }
-  .why-point, .craft-card, .mark-card, .proof, .shadow-box,
+  .why-point, .craft-card, .mark-card, .proof,
   .contact-links a, .timeline li, .skill-col { break-inside: avoid; }
   .why-point, .craft-card, .mark-card { padding: 12pt 12pt; }
   .proof { padding: 14pt 16pt; margin-top: 12pt !important; }
   .proof-grid { grid-template-columns: 1fr 1fr; gap: 6pt 14pt; margin-bottom: 12pt; }
   .proof .btn { display: none; }
-  .shadow-box { padding: 12pt 16pt; }
   .timeline { margin-top: 12pt; }
   .timeline li { grid-template-columns: 90pt 1fr; padding: 6pt 0; }
   .t-when { font-size: 9.5pt; }

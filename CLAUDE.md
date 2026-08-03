@@ -71,7 +71,7 @@
 
 ## Content model
 
-Single index.html with anchored sections: hero (role target), why NinjaOne, proof of work (ninjaone.nixfred.com), SE craft, career timeline, skills grid, recognition and education, Larry (AI partner), contact/footer. print.css produces the paper artifact. New content enters only through PRD change control.
+Single index.html with anchored sections: hero (role target), why NinjaOne, how I learn your platform (ninjaone.nixfred.com), SE craft, career timeline, skills grid, recognition and education, contact/footer. print.css produces the paper artifact. New content enters only through PRD change control.
 
 ## Ship checklist (factory Laws 4, 6, 11, 13, 14 plus OPERATIONS.md)
 

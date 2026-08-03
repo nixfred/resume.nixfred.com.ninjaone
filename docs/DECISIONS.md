@@ -30,6 +30,10 @@ Career facts mirror nixfred/resume v9.0 exactly. BlueAlly and Pure Storage appea
 
 Orbitron, Inter, JetBrains Mono (fontsource woff2, latin), Shippori Mincho B1 subsetted to the kanji used plus macron vowels. No runtime CDN font dependencies (STANDARDS.md section 5).
 
+## 2026-08-02 Fred review round 4: Larry section removed
+
+Fred: remove the part about Larry, the entire section. The 影 shadow section (The shadow that works beside me) is out, along with its nav entry and the shadow-box styles in styles.css and print.css. The general resume keeps its Larry content; this site does not mention the system. Section kanji sequence now 志 修行 術 道 印 縁.
+
 ## 2026-08-02 Fred review round 3: print keeps the ninja, breaks and spacing tuned
 
 Fred: keep the little ninja in the PDF, page breaks must look good, and printed pages waste no vertical space. Print stylesheet now keeps the hero ninja as a small line-art figure at the header's top right (screen filters removed), adds break-inside avoid to every card, timeline row, skill column, and the proof box, break-after avoid on section heads and headings, and tightens print rhythm (12mm pages, 16pt section gaps, smaller card padding). In-card kanji badges hidden on paper as redundant decoration. Verified against a real generated PDF, five Letter pages, no split cards and no stranded headings.

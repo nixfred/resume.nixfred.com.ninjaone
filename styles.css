@@ -506,18 +506,6 @@ section { padding: var(--section-gap) 0 0; }
 }
 .mark-card p { font-size: 14.5px; color: var(--bone-dim); }
 
-/* ---------- shadow ---------- */
-.shadow-box {
-  border-left: 3px solid var(--brand);
-  background: var(--ink-2);
-  border-radius: 0 6px 6px 0;
-  padding: clamp(26px, 4vw, 44px);
-  max-width: 780px;
-}
-.shadow-box p { color: var(--bone-dim); font-size: 16px; }
-.shadow-box p + p { margin-top: 14px; }
-.shadow-box strong { color: var(--bone); font-weight: 600; }
-
 /* ---------- contact ---------- */
 .contact-links {
   display: grid;
